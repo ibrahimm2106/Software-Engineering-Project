@@ -1,58 +1,185 @@
-# MySQL, PHPMyAdmin and Node.js (ready for Express development)
+# Minimise Food Waste
 
-This will install Mysql and phpmyadmin (including all dependencies to run Phpmyadmin) AND node.js
+![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=nodedotjs&logoColor=white)
+![Pug](https://img.shields.io/badge/Pug-Templates-A86454?logo=pug&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)
+![Database](https://img.shields.io/badge/Data-MySQL%20%7C%20SQLite-4479A1)
+![CI](https://github.com/ibrahimm2106/Software-Engineering-Project/actions/workflows/node-ci.yml/badge.svg)
 
-This receipe is for development - Node.js is run in using supervisor: changes to any file in the app will trigger a rebuild automatically.
+A full-stack university software-engineering project for a community food-sharing platform. The application is designed to help users reduce food waste by listing surplus food, discovering nearby items, receiving recommendations and communicating with other users.
 
-For security, this receipe uses a .env file for credentials.  A sample is provided in the env-sample file. If using these files for a fresh project, copy the env-sample file to a file called .env.  Do NOT commit the changed .env file into your new project for security reasons (in the node package its included in .gitignore so you can't anyway)
+This repository demonstrates **Node.js/Express development, server-rendered UI, service-layer organisation, sessions, database integration scaffolding, Docker and collaborative software engineering**.
 
-In node.js, we use the MySQl2 packages (to avoid problems with MySQL8) and the dotenv package to read the environment variables.
+## Portfolio highlights
 
-Local files are mounted into the container using the 'volumes' directive in the docker-compose.yml for ease of development.
+- Built an **Express.js** web application with multiple user-facing routes and workflows.
+- Used **Pug** templates and Bootstrap-based styling for server-rendered pages.
+- Implemented food listings with category, quantity, expiry, location, dietary and pickup information.
+- Added application services for **recommendations, messaging, location logic and user points**.
+- Added login/session behaviour and user-facing account flows.
+- Included Docker-based development infrastructure for Node.js, MySQL and phpMyAdmin.
+- Added database service code and MySQL/SQLite dependencies for persistence-oriented development.
+- Included Nightwatch-based browser-test configuration in the project tooling.
+- Added automated CI checks for dependency installation and JavaScript syntax validation.
 
-### Super-quickstart your new project:
+## Skills demonstrated
 
-* Make sure that you don't have any other containers running usind docker ps
-* run ```docker-compose up --build```
+| Area | Evidence in the repository |
+| --- | --- |
+| JavaScript / Node.js | Express application logic, routes and service modules |
+| Backend development | Sessions, request handling, service separation and server-side rendering |
+| Express.js | Route handling, middleware and static-content configuration |
+| Frontend | Pug templates, Bootstrap, CSS and responsive page structure |
+| Application design | Separate recommendation, messaging, location and points services |
+| Data | MySQL/SQLite dependencies and database service layer |
+| DevOps | Docker, Docker Compose and environment-based configuration scaffolding |
+| Testing | Nightwatch configuration plus CI syntax/build checks |
+| Collaboration | Multi-contributor repository and Git-based project workflow |
 
-#### Visit phphmyadmin at:
+## Core product features
 
-http://localhost:8081/
+### Food listings
+The application contains structured food-listing data with information such as:
 
-#### Visit your express app at:
+- title and category
+- quantity and unit
+- expiry date
+- pickup location/distance
+- dietary and allergen information
+- pickup times and contact method
+- listing verification/condition information
 
-http://localhost:3000
+### Recommendations
+`recommendationService.js` separates recommendation-oriented logic from the main Express application.
 
-For reference, see the video at: https://roehampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6f290a6b-ba94-4729-9632-adcf00ac336e
+### Messaging
+`messagingService.js` provides a dedicated service for user-to-user communication behaviour used by message and conversation views.
 
-NB if you are running this on your own computer rather than the azure labs that has been set up for you, you will need to install the following:
+### Location-aware behaviour
+`locationService.js` contains location-related application logic for the food-sharing workflow.
 
-* node.js  (windows: https://nodejs.org/en/download/)
-* docker desktop (for windows, this will also prompt you to install linux subsystem for windows https://docs.docker.com/desktop/windows/install/ )
+### User points
+`userPointsService.js` provides points/reward-oriented behaviour to support user engagement.
 
-### Whats provided in these scaffolding files?
+## Architecture
 
-
-  * A docker setup which will provide you with node.js, mysql and phpmyadmin, including the configuration needed so that both node.js AND phpmyadmin can 'see' and connect to your mysql database.  If you don't use docker you'll have to set up and connect each of these components separately.
-  * A basic starting file structure for a node.js app.
-  * A package.json file that will pull in the node.js libraries required and start your app as needed.
-  * A db.js file which provides all the code needed to connect to the mysql database, using the credentials in the .env file, and which provides a query() function that can send queries to the database and receive a result.  In order to use this (ie. interact with the database, you simply need to include this file in any file you create that needs this database interaction) with the following code:
-
-```const db = require('./services/db');
+```mermaid
+flowchart LR
+    A[Browser] --> B[Express app]
+    B --> C[Pug views]
+    B --> D[Session middleware]
+    B --> E[Recommendation service]
+    B --> F[Messaging service]
+    B --> G[Location service]
+    B --> H[User points service]
+    B --> I[Database service]
+    I --> J[(MySQL / SQLite)]
 ```
 
-____
+The main application is in `app/app.js`, while domain-specific behaviour is split into services under `app/services/`. This makes the repository easier to navigate than placing all business behaviour in route handlers.
 
-Useful commands:
+See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for a concise repository map.
 
-Get a shell in any of the containers
+## Main views
+
+The repository includes Pug views for workflows such as:
+
+- home/landing pages
+- login and sign-up
+- food listings and detailed listing views
+- recommendations
+- messages and conversations
+- user/profile-related pages
+- about and error pages
+
+## Project structure
+
+```text
+.
+├── app/
+│   ├── app.js
+│   ├── public/
+│   ├── services/
+│   │   ├── db.js
+│   │   ├── locationService.js
+│   │   ├── messagingService.js
+│   │   ├── recommendationService.js
+│   │   └── userPointsService.js
+│   └── views/
+├── custom-tests/
+├── database-file/
+├── Dockerfile
+├── docker-compose.yml
+├── docker-compose-deploy.yml
+├── env-sample
+├── package.json
+├── package-lock.json
+├── README.md
+└── .github/workflows/node-ci.yml
+```
+
+## Quick start with Docker
+
+### Requirements
+
+- Docker Desktop
+- Docker Compose
+
+Create the local environment file from the sample:
 
 ```bash
-docker exec -it <container name> bash -l
+cp env-sample .env
 ```
 
-Once in the database container, you can get a MySQL CLI in the usual way
+On Windows Command Prompt:
+
+```cmd
+copy env-sample .env
+```
+
+Then start the development stack:
 
 ```bash
-mysql -uroot -p<password> 
+docker compose up --build
 ```
+
+The supplied Compose setup provides the Node.js application plus the database/development services configured by the coursework scaffold.
+
+## Run with Node.js
+
+If running outside Docker:
+
+```bash
+npm ci
+npm start
+```
+
+The project uses `supervisor` in the development start script so relevant file changes can restart the app automatically.
+
+## Testing and CI
+
+The repository includes Nightwatch in `devDependencies` and browser-test files under `custom-tests/`.
+
+The portfolio CI workflow performs a reliable baseline check on GitHub by:
+
+1. installing dependencies with `npm ci`
+2. checking the main Express application for JavaScript syntax errors
+3. checking each service module for JavaScript syntax errors
+
+This keeps the public repository continuously verifiable without depending on an interactive browser or external database service for the baseline CI job.
+
+## Security and deployment scope
+
+> [!IMPORTANT]
+> This is an academic/demo application, not a production food-sharing platform.
+
+The repository contains sample users and development-oriented session/data behaviour for coursework demonstration. Production deployment would require additional work such as secure credential storage, password hashing, CSRF protection, hardened session configuration, production database migrations, validation review and infrastructure/security testing.
+
+## Academic context
+
+This repository comes from university software-engineering work and demonstrates the process of building a larger web application around multiple features and contributors. The README has been reorganised for portfolio review so employers can quickly identify the implemented technologies, architecture and engineering skills.
+
+## Author / repository owner
+
+**Mohamed Ibrahim**  
+BEng Software Engineering, University of Roehampton
