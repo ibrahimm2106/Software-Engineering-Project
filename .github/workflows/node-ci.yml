@@ -1,0 +1,35 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [Master]
+  pull_request:
+    branches: [Master]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check application syntax
+        run: node --check app/app.js
+
+      - name: Check service modules
+        run: |
+          node --check app/services/db.js
+          node --check app/services/locationService.js
+          node --check app/services/messagingService.js
+          node --check app/services/recommendationService.js
+          node --check app/services/userPointsService.js
