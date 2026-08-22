@@ -1,4 +1,10 @@
+<div align="center">
+
 # Minimise Food Waste
+
+### A community food-sharing web application built with Node.js and Express
+
+Reduce food waste by helping people **share surplus food, discover nearby listings, receive personalised recommendations and message other users**.
 
 ![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=nodedotjs&logoColor=white)
 ![Pug](https://img.shields.io/badge/Pug-Templates-A86454?logo=pug&logoColor=white)
@@ -6,78 +12,69 @@
 ![Database](https://img.shields.io/badge/Data-MySQL%20%7C%20SQLite-4479A1)
 ![CI](https://github.com/ibrahimm2106/Software-Engineering-Project/actions/workflows/node-ci.yml/badge.svg)
 
-A full-stack **Node.js / Express** food-sharing platform designed to help communities reduce food waste by sharing surplus food, discovering nearby listings, receiving personalised recommendations and communicating with other users.
-
-**Tech:** JavaScript · Node.js · Express.js · Pug · Bootstrap · MySQL / SQLite · Docker · GitHub Actions
+</div>
 
 ---
 
-## Final application preview
+## Project at a glance
 
-The screenshots come from the project's **Sprint 4 final documentation** and show the user-facing application produced by the team.
-
-### Home
-
-<p align="center">
-  <img src="docs/screenshots/final-app/home.jpg" alt="Minimise Food Waste home page" width="480">
-</p>
-
-The landing page introduces the platform and gives users direct routes to **share food** and view **recommendations**. It also presents the project's advanced feature areas, including smart matching, rewards, messaging and location services.
-
-### Login and account access
-
-<p align="center">
-  <img src="docs/screenshots/final-app/login.jpg" alt="Login page" width="395">
-</p>
-
-The account flow provides email and password entry together with a **remember me** option for returning users.
-
-### Other final application views
-
-The completed Sprint 4 application also includes:
-
-- **Browse available food** — card-based listings with category, quantity and dietary information.
-- **Personalised recommendations** — suggested food matches and filtering based on user preferences/activity.
-- **Smart matchmaking** — recommendation-oriented matching for donors and recipients.
-- **Tag / share food** — structured listing creation for surplus food.
-- **User profiles and rewards** — account information, sharing activity and points.
-- **Messaging** — user-to-user conversations to coordinate collection.
-
-A fuller product walkthrough is available in [`docs/FINAL_APP.md`](docs/FINAL_APP.md).
-
----
-
-## What the application does
-
-- **Share surplus food** by creating structured food listings.
-- **Browse available items** with category, quantity, expiry, location and dietary information.
-- **Receive recommendations** through dedicated recommendation-oriented application logic.
-- **Message other users** to support food collection and community interaction.
-- **Track user activity** through profile and points/reward features.
-- **Use location-aware behaviour** as part of the food-sharing workflow.
-
-## Engineering highlights
-
-| Area | Implementation |
+| | |
 | --- | --- |
-| Backend | Node.js, Express.js, routing, sessions and service-layer organisation |
-| Frontend | Pug templates, Bootstrap/CSS and server-rendered views |
-| Recommendations | Dedicated `recommendationService.js` |
-| Messaging | Dedicated `messagingService.js` |
-| Location logic | Dedicated `locationService.js` |
-| User rewards | Dedicated `userPointsService.js` |
-| Data | MySQL / SQLite dependencies and database service layer |
-| DevOps | Docker, Docker Compose and environment configuration |
-| Testing | Nightwatch configuration and GitHub Actions checks |
-| Collaboration | Multi-contributor Git/GitHub development workflow |
+| **Project type** | Full-stack university software engineering team project |
+| **Main goal** | Make it easier for communities to share surplus food instead of wasting it |
+| **Core journey** | Sign in → browse food → get recommendations → share food → message users |
+| **Frontend** | Pug templates, Bootstrap and CSS |
+| **Backend** | Node.js, Express.js, sessions and service modules |
+| **Data** | MySQL / SQLite |
+| **DevOps & testing** | Docker, Docker Compose, Nightwatch and GitHub Actions |
+| **Status** | Completed academic project, presented here as a portfolio showcase |
 
-## Architecture
+## Key features
+
+- **Share surplus food** — create structured listings with food, quantity, expiry, location and dietary information.
+- **Browse available food** — discover items through a simple card-based interface.
+- **Personalised recommendations** — surface relevant listings using recommendation-oriented application logic.
+- **Smart matchmaking** — help connect donors and recipients around suitable food items.
+- **Messaging** — allow users to communicate and coordinate collection.
+- **Profiles and rewards** — track account activity, sharing impact and points.
+
+---
+
+## Application preview
+
+### Home page
+
+<p align="center">
+  <a href="docs/screenshots/final-app/home.jpg">
+    <img src="docs/screenshots/final-app/home.jpg" alt="Minimise Food Waste home page" width="620">
+  </a>
+</p>
+
+The home page introduces the purpose of the platform and gives users quick access to the main food-sharing workflows.
+
+### Login
+
+<p align="center">
+  <a href="docs/screenshots/final-app/login.jpg">
+    <img src="docs/screenshots/final-app/login.jpg" alt="Minimise Food Waste login page" width="430">
+  </a>
+</p>
+
+The account flow includes email and password entry together with a **remember me** option for returning users.
+
+> Click either screenshot to open the original image.
+
+For the wider product journey, see **[Final Application Walkthrough](docs/FINAL_APP.md)**.
+
+---
+
+## How the application is organised
 
 ```mermaid
 flowchart LR
-    A[Browser] --> B[Express app]
+    A[User] --> B[Express application]
     B --> C[Pug views]
-    B --> D[Session middleware]
+    B --> D[Sessions]
     B --> E[Recommendation service]
     B --> F[Messaging service]
     B --> G[Location service]
@@ -86,70 +83,40 @@ flowchart LR
     I --> J[(MySQL / SQLite)]
 ```
 
-The main Express application is located in `app/app.js`, while feature-specific behaviour is separated into service modules under `app/services/`.
+The main Express application lives in `app/app.js`. Feature-specific behaviour is separated into services under `app/services/`, making the project easier to navigate and maintain.
 
-See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for a concise repository map.
+### Main service modules
 
-## Main user journeys
+| Service | Purpose |
+| --- | --- |
+| `recommendationService.js` | Recommendation-oriented application logic |
+| `messagingService.js` | User-to-user messaging behaviour |
+| `locationService.js` | Location-aware food-sharing logic |
+| `userPointsService.js` | Points and reward-related behaviour |
+| `db.js` | Database service layer |
 
-The application contains views for:
+See **[Architecture Notes](docs/ARCHITECTURE.md)** for a more detailed repository map.
 
-- home / landing experience
-- login and sign-up
-- browsing food listings
-- viewing listing details
-- personalised recommendations
-- smart matchmaking
-- creating/tagging food listings
-- messaging and conversations
-- user profiles
-- about / information pages
+---
 
-## Project structure
+## Technology stack
 
-```text
-.
-├── app/
-│   ├── app.js
-│   ├── public/
-│   ├── services/
-│   │   ├── db.js
-│   │   ├── locationService.js
-│   │   ├── messagingService.js
-│   │   ├── recommendationService.js
-│   │   └── userPointsService.js
-│   └── views/
-├── custom-tests/
-├── database-file/
-├── docs/
-│   ├── ARCHITECTURE.md
-│   ├── FINAL_APP.md
-│   └── screenshots/
-│       └── final-app/
-│           ├── home.jpg
-│           ├── browse-food.jpg
-│           ├── recommendations.jpg
-│           └── login.jpg
-├── Dockerfile
-├── docker-compose.yml
-├── docker-compose-deploy.yml
-├── env-sample
-├── package.json
-├── package-lock.json
-├── README.md
-└── .github/workflows/node-ci.yml
-```
+**Frontend:** Pug · Bootstrap · CSS  
+**Backend:** JavaScript · Node.js · Express.js  
+**Database:** MySQL · SQLite  
+**Infrastructure:** Docker · Docker Compose  
+**Testing / CI:** Nightwatch · GitHub Actions  
+**Collaboration:** Git · GitHub
 
-## Run locally
+---
 
-### With Docker
+## Run the project locally
 
-Requirements:
+### Option 1 — Docker
 
-- Docker Desktop
-- Docker Compose
+**Requirements:** Docker Desktop and Docker Compose.
 
-Create the environment file:
+Create a local environment file:
 
 ```bash
 cp env-sample .env
@@ -161,13 +128,13 @@ On Windows Command Prompt:
 copy env-sample .env
 ```
 
-Start the stack:
+Start the application:
 
 ```bash
 docker compose up --build
 ```
 
-### With Node.js
+### Option 2 — Node.js
 
 ```bash
 npm ci
@@ -176,28 +143,50 @@ npm start
 
 The development start script uses `supervisor` so relevant source changes can restart the application automatically.
 
-## Testing and CI
+---
 
-The repository includes Nightwatch browser-test configuration and custom test files. The portfolio GitHub Actions workflow provides a reliable baseline by:
+## Repository structure
 
-1. installing dependencies with `npm ci`;
-2. validating the main Express application for JavaScript syntax errors;
-3. validating the service modules for JavaScript syntax errors.
+```text
+.
+├── app/
+│   ├── app.js
+│   ├── public/
+│   ├── services/
+│   └── views/
+├── custom-tests/
+├── database-file/
+├── docs/
+│   ├── ARCHITECTURE.md
+│   ├── FINAL_APP.md
+│   └── screenshots/
+├── Dockerfile
+├── docker-compose.yml
+├── docker-compose-deploy.yml
+├── env-sample
+├── package.json
+└── README.md
+```
 
-This keeps the public repository continuously verifiable without requiring an interactive browser or external database for the baseline CI job.
+---
 
-## Security and deployment scope
+## Testing and continuous integration
 
-> [!IMPORTANT]
-> This is an academic/demo application, not a production food-sharing service.
+The repository includes Nightwatch browser-test configuration and automated GitHub Actions checks. The CI workflow:
 
-The repository contains development-oriented session/data behaviour and sample application flows. A production version would require additional security work such as secure credential storage, password hashing, CSRF protection, hardened sessions, production database migrations and wider validation/security testing.
+1. installs dependencies with `npm ci`;
+2. validates the main Express application for JavaScript syntax errors;
+3. validates the service modules for JavaScript syntax errors.
+
+This gives the public portfolio repository a simple, repeatable baseline check.
+
+---
 
 ## Academic context
 
-This repository is based on a University of Roehampton software-engineering team project. The portfolio version keeps the implemented application and engineering work while presenting it in a cleaner format for technical and recruiter review.
+This repository is based on a **University of Roehampton software engineering team project**. The portfolio version keeps the implemented application and engineering work while presenting it in a cleaner format for technical and recruiter review.
 
-The final UI screenshots above were taken from the project's Sprint 4 documentation.
+> **Note:** This is an academic/demo application rather than a production food-sharing service. A production release would require additional security hardening, validation, database migration work and deployment testing.
 
 ## Author / repository owner
 
