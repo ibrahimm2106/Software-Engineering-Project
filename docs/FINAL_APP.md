@@ -14,7 +14,9 @@ The main flow of the application is:
 
 ## 1. Login
 
-![Login screen](https://raw.githubusercontent.com/ibrahimm2106/Software-Engineering-Project/Master/docs/screenshots/final-app/login.jpg)
+<p align="center">
+  <img src="screenshots/final-app/login.jpg" alt="Login screen" width="395">
+</p>
 
 The login screen provides email and password fields, validation and a remember-me option before users enter the main application.
 
@@ -22,7 +24,9 @@ The login screen provides email and password fields, validation and a remember-m
 
 ## 2. Home page
 
-![Home page](https://raw.githubusercontent.com/ibrahimm2106/Software-Engineering-Project/Master/docs/screenshots/final-app/home.jpg)
+<p align="center">
+  <img src="screenshots/final-app/home.jpg" alt="Home page" width="480">
+</p>
 
 The home page acts as the landing point for the platform. It directs users towards sharing surplus food and discovering recommendations, while presenting the food-waste reduction purpose of the application.
 
@@ -30,15 +34,17 @@ The home page acts as the landing point for the platform. It directs users towar
 
 ## 3. Browse available food
 
-![Browse available food](https://raw.githubusercontent.com/ibrahimm2106/Software-Engineering-Project/Master/docs/screenshots/final-app/browse-food.jpg)
-
 The browsing experience presents available food listings with information intended to help users decide whether an item is suitable, including item details, quantity/location information and dietary context.
+
+The original Sprint 4 capture for this view is retained in [`screenshots/final-app/browse-food.jpg`](screenshots/final-app/browse-food.jpg), but it is not embedded here because the source capture contains a large blank area that disrupts the GitHub page layout.
 
 ---
 
 ## 4. Personalised recommendations
 
-![Personalised recommendations](https://raw.githubusercontent.com/ibrahimm2106/Software-Engineering-Project/Master/docs/screenshots/final-app/recommendations.jpg)
+<p align="center">
+  <img src="screenshots/final-app/recommendations.jpg" alt="Personalised recommendations" width="480">
+</p>
 
 The recommendations view demonstrates the application's matchmaking concept: surfacing relevant food items based on user preferences and previous activity instead of requiring users to manually search every listing.
 
