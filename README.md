@@ -22,6 +22,48 @@ This repository demonstrates **Node.js/Express development, server-rendered UI, 
 - Included Nightwatch-based browser-test configuration in the project tooling.
 - Added automated CI checks for dependency installation and JavaScript syntax validation.
 
+## Final application walkthrough
+
+The Sprint 4 documentation captures the final user-facing version of the food-sharing platform. The interface uses a consistent green visual theme and supports the core journey from account access through food discovery and personalised recommendations.
+
+> The screenshots below are extracted from the project's Sprint 4 documentation and included here to show what the finished application looked like.
+
+### Home page
+
+![Minimise Food Waste home page](docs/screenshots/final-app/home.jpg)
+
+The landing page introduces the food-waste reduction concept and gives users direct entry points into the platform's main workflows. The Sprint 4 documentation describes the home experience as providing routes to **share food** and access **recommendations**, with location-aware matching intended to connect food donors and recipients.
+
+### Login and account access
+
+![Login page](docs/screenshots/final-app/login.jpg)
+
+The login page provides email and password fields as the main authenticated entry point to the application. The documented interface also includes a **remember me** option to reduce repeated sign-in steps for returning users.
+
+### Browse available food
+
+![Browse available food page](docs/screenshots/final-app/browse-food.jpg)
+
+The browse page presents available food listings in a card-based layout. Listings expose practical information such as the food item, category, quantity and dietary suitability, helping users identify relevant items and avoid unsuitable food.
+
+### Personalised recommendations
+
+![Personalised recommendations page](docs/screenshots/final-app/recommendations.jpg)
+
+The recommendations screen presents personalised food matches and filtering controls. In the Sprint 4 design, the recommendation concept is described as using preference analysis and collaborative filtering based on user behaviour/history to surface more relevant listings.
+
+### Wider final-app experience
+
+The Sprint 4 project documentation also shows the completed design for:
+
+- **Smart matchmaking** — a recommendation-oriented workflow explaining preference analysis and collaborative filtering.
+- **Tag food / create listing** — lets donors enter a food name, category and sub-category, quality, photo and location.
+- **User profile** — displays user details, items shared and received, ratings and food-sharing impact.
+- **Messaging** — provides user conversations together with messaging activity information.
+- **About page** — explains the food-waste problem and directs users towards browsing or sharing available food.
+
+Together, these screens show the intended end-to-end product: users can sign in, discover surplus food, receive relevant recommendations, contribute their own food listings and interact with the wider sharing community.
+
 ## Skills demonstrated
 
 | Area | Evidence in the repository |
@@ -108,6 +150,14 @@ The repository includes Pug views for workflows such as:
 │   └── views/
 ├── custom-tests/
 ├── database-file/
+├── docs/
+│   ├── ARCHITECTURE.md
+│   └── screenshots/
+│       └── final-app/
+│           ├── home.jpg
+│           ├── login.jpg
+│           ├── browse-food.jpg
+│           └── recommendations.jpg
 ├── Dockerfile
 ├── docker-compose.yml
 ├── docker-compose-deploy.yml
