@@ -6,102 +6,67 @@
 ![Database](https://img.shields.io/badge/Data-MySQL%20%7C%20SQLite-4479A1)
 ![CI](https://github.com/ibrahimm2106/Software-Engineering-Project/actions/workflows/node-ci.yml/badge.svg)
 
-A full-stack university software-engineering project for a community food-sharing platform. The application is designed to help users reduce food waste by listing surplus food, discovering nearby items, receiving recommendations and communicating with other users.
+A full-stack **Node.js / Express** food-sharing platform designed to help communities reduce food waste by sharing surplus food, discovering nearby listings, receiving personalised recommendations and communicating with other users.
 
-This repository demonstrates **Node.js/Express development, server-rendered UI, service-layer organisation, sessions, database integration scaffolding, Docker and collaborative software engineering**.
+**Tech:** JavaScript · Node.js · Express.js · Pug · Bootstrap · MySQL / SQLite · Docker · GitHub Actions
 
-## Portfolio highlights
+---
 
-- Built an **Express.js** web application with multiple user-facing routes and workflows.
-- Used **Pug** templates and Bootstrap-based styling for server-rendered pages.
-- Implemented food listings with category, quantity, expiry, location, dietary and pickup information.
-- Added application services for **recommendations, messaging, location logic and user points**.
-- Added login/session behaviour and user-facing account flows.
-- Included Docker-based development infrastructure for Node.js, MySQL and phpMyAdmin.
-- Added database service code and MySQL/SQLite dependencies for persistence-oriented development.
-- Included Nightwatch-based browser-test configuration in the project tooling.
-- Added automated CI checks for dependency installation and JavaScript syntax validation.
+## Final application preview
 
-## Final application walkthrough
+The screenshots below come from the project's **Sprint 4 final documentation** and show the user-facing application produced by the team.
 
-The Sprint 4 documentation captures the final user-facing version of the food-sharing platform. The interface uses a consistent green visual theme and supports the core journey from account access through food discovery and personalised recommendations.
+### Home
 
-> The screenshots below are extracted from the project's Sprint 4 documentation and included here to show what the finished application looked like.
+<img src="https://raw.githubusercontent.com/ibrahimm2106/Software-Engineering-Project/Master/docs/screenshots/final-app/home.jpg" alt="Minimise Food Waste home page" width="900">
 
-### Home page
-
-![Minimise Food Waste home page](docs/screenshots/final-app/home.jpg)
-
-The landing page introduces the food-waste reduction concept and gives users direct entry points into the platform's main workflows. The Sprint 4 documentation describes the home experience as providing routes to **share food** and access **recommendations**, with location-aware matching intended to connect food donors and recipients.
-
-### Login and account access
-
-![Login page](docs/screenshots/final-app/login.jpg)
-
-The login page provides email and password fields as the main authenticated entry point to the application. The documented interface also includes a **remember me** option to reduce repeated sign-in steps for returning users.
+The landing page introduces the platform and gives users direct routes to **share food** and view **recommendations**. It also presents the project's advanced feature areas, including smart matching, rewards, messaging and location services.
 
 ### Browse available food
 
-![Browse available food page](docs/screenshots/final-app/browse-food.jpg)
+<img src="https://raw.githubusercontent.com/ibrahimm2106/Software-Engineering-Project/Master/docs/screenshots/final-app/browse-food.jpg" alt="Browse available food page" width="900">
 
-The browse page presents available food listings in a card-based layout. Listings expose practical information such as the food item, category, quantity and dietary suitability, helping users identify relevant items and avoid unsuitable food.
+Users can explore available food listings in a card-based interface. Listings expose useful information such as category, quantity and dietary suitability so users can quickly judge whether an item is relevant to them.
 
 ### Personalised recommendations
 
-![Personalised recommendations page](docs/screenshots/final-app/recommendations.jpg)
+<img src="https://raw.githubusercontent.com/ibrahimm2106/Software-Engineering-Project/Master/docs/screenshots/final-app/recommendations.jpg" alt="Personalised recommendations page" width="900">
 
-The recommendations screen presents personalised food matches and filtering controls. In the Sprint 4 design, the recommendation concept is described as using preference analysis and collaborative filtering based on user behaviour/history to surface more relevant listings.
+The recommendations interface presents suggested food matches and filters. The Sprint 4 design describes the recommendation concept using preference analysis and collaborative filtering to surface more relevant listings.
 
-### Wider final-app experience
+### Login and account access
 
-The Sprint 4 project documentation also shows the completed design for:
+<img src="https://raw.githubusercontent.com/ibrahimm2106/Software-Engineering-Project/Master/docs/screenshots/final-app/login.jpg" alt="Login page" width="650">
 
-- **Smart matchmaking** — a recommendation-oriented workflow explaining preference analysis and collaborative filtering.
-- **Tag food / create listing** — lets donors enter a food name, category and sub-category, quality, photo and location.
-- **User profile** — displays user details, items shared and received, ratings and food-sharing impact.
-- **Messaging** — provides user conversations together with messaging activity information.
-- **About page** — explains the food-waste problem and directs users towards browsing or sharing available food.
+The account flow provides email and password entry together with a **remember me** option for returning users.
 
-Together, these screens show the intended end-to-end product: users can sign in, discover surplus food, receive relevant recommendations, contribute their own food listings and interact with the wider sharing community.
+The wider final application also includes **smart matchmaking, food tagging/listing creation, user profiles, points/rewards and messaging**.
 
-## Skills demonstrated
+---
 
-| Area | Evidence in the repository |
+## What the application does
+
+- **Share surplus food** by creating structured food listings.
+- **Browse available items** with category, quantity, expiry, location and dietary information.
+- **Receive recommendations** through dedicated recommendation-oriented application logic.
+- **Message other users** to support food collection and community interaction.
+- **Track user activity** through profile and points/reward features.
+- **Use location-aware behaviour** as part of the food-sharing workflow.
+
+## Engineering highlights
+
+| Area | Implementation |
 | --- | --- |
-| JavaScript / Node.js | Express application logic, routes and service modules |
-| Backend development | Sessions, request handling, service separation and server-side rendering |
-| Express.js | Route handling, middleware and static-content configuration |
-| Frontend | Pug templates, Bootstrap, CSS and responsive page structure |
-| Application design | Separate recommendation, messaging, location and points services |
-| Data | MySQL/SQLite dependencies and database service layer |
-| DevOps | Docker, Docker Compose and environment-based configuration scaffolding |
-| Testing | Nightwatch configuration plus CI syntax/build checks |
-| Collaboration | Multi-contributor repository and Git-based project workflow |
-
-## Core product features
-
-### Food listings
-The application contains structured food-listing data with information such as:
-
-- title and category
-- quantity and unit
-- expiry date
-- pickup location/distance
-- dietary and allergen information
-- pickup times and contact method
-- listing verification/condition information
-
-### Recommendations
-`recommendationService.js` separates recommendation-oriented logic from the main Express application.
-
-### Messaging
-`messagingService.js` provides a dedicated service for user-to-user communication behaviour used by message and conversation views.
-
-### Location-aware behaviour
-`locationService.js` contains location-related application logic for the food-sharing workflow.
-
-### User points
-`userPointsService.js` provides points/reward-oriented behaviour to support user engagement.
+| Backend | Node.js, Express.js, routing, sessions and service-layer organisation |
+| Frontend | Pug templates, Bootstrap/CSS and server-rendered views |
+| Recommendations | Dedicated `recommendationService.js` |
+| Messaging | Dedicated `messagingService.js` |
+| Location logic | Dedicated `locationService.js` |
+| User rewards | Dedicated `userPointsService.js` |
+| Data | MySQL / SQLite dependencies and database service layer |
+| DevOps | Docker, Docker Compose and environment configuration |
+| Testing | Nightwatch configuration and GitHub Actions checks |
+| Collaboration | Multi-contributor Git/GitHub development workflow |
 
 ## Architecture
 
@@ -118,21 +83,24 @@ flowchart LR
     I --> J[(MySQL / SQLite)]
 ```
 
-The main application is in `app/app.js`, while domain-specific behaviour is split into services under `app/services/`. This makes the repository easier to navigate than placing all business behaviour in route handlers.
+The main Express application is located in `app/app.js`, while feature-specific behaviour is separated into service modules under `app/services/`.
 
 See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for a concise repository map.
 
-## Main views
+## Main user journeys
 
-The repository includes Pug views for workflows such as:
+The application contains views for:
 
-- home/landing pages
+- home / landing experience
 - login and sign-up
-- food listings and detailed listing views
-- recommendations
-- messages and conversations
-- user/profile-related pages
-- about and error pages
+- browsing food listings
+- viewing listing details
+- personalised recommendations
+- smart matchmaking
+- creating/tagging food listings
+- messaging and conversations
+- user profiles
+- about / information pages
 
 ## Project structure
 
@@ -155,9 +123,9 @@ The repository includes Pug views for workflows such as:
 │   └── screenshots/
 │       └── final-app/
 │           ├── home.jpg
-│           ├── login.jpg
 │           ├── browse-food.jpg
-│           └── recommendations.jpg
+│           ├── recommendations.jpg
+│           └── login.jpg
 ├── Dockerfile
 ├── docker-compose.yml
 ├── docker-compose-deploy.yml
@@ -168,14 +136,16 @@ The repository includes Pug views for workflows such as:
 └── .github/workflows/node-ci.yml
 ```
 
-## Quick start with Docker
+## Run locally
 
-### Requirements
+### With Docker
+
+Requirements:
 
 - Docker Desktop
 - Docker Compose
 
-Create the local environment file from the sample:
+Create the environment file:
 
 ```bash
 cp env-sample .env
@@ -187,47 +157,43 @@ On Windows Command Prompt:
 copy env-sample .env
 ```
 
-Then start the development stack:
+Start the stack:
 
 ```bash
 docker compose up --build
 ```
 
-The supplied Compose setup provides the Node.js application plus the database/development services configured by the coursework scaffold.
-
-## Run with Node.js
-
-If running outside Docker:
+### With Node.js
 
 ```bash
 npm ci
 npm start
 ```
 
-The project uses `supervisor` in the development start script so relevant file changes can restart the app automatically.
+The development start script uses `supervisor` so relevant source changes can restart the application automatically.
 
 ## Testing and CI
 
-The repository includes Nightwatch in `devDependencies` and browser-test files under `custom-tests/`.
+The repository includes Nightwatch browser-test configuration and custom test files. The portfolio GitHub Actions workflow provides a reliable baseline by:
 
-The portfolio CI workflow performs a reliable baseline check on GitHub by:
+1. installing dependencies with `npm ci`;
+2. validating the main Express application for JavaScript syntax errors;
+3. validating the service modules for JavaScript syntax errors.
 
-1. installing dependencies with `npm ci`
-2. checking the main Express application for JavaScript syntax errors
-3. checking each service module for JavaScript syntax errors
-
-This keeps the public repository continuously verifiable without depending on an interactive browser or external database service for the baseline CI job.
+This keeps the public repository continuously verifiable without requiring an interactive browser or external database for the baseline CI job.
 
 ## Security and deployment scope
 
 > [!IMPORTANT]
-> This is an academic/demo application, not a production food-sharing platform.
+> This is an academic/demo application, not a production food-sharing service.
 
-The repository contains sample users and development-oriented session/data behaviour for coursework demonstration. Production deployment would require additional work such as secure credential storage, password hashing, CSRF protection, hardened session configuration, production database migrations, validation review and infrastructure/security testing.
+The repository contains development-oriented session/data behaviour and sample application flows. A production version would require additional security work such as secure credential storage, password hashing, CSRF protection, hardened sessions, production database migrations and wider validation/security testing.
 
 ## Academic context
 
-This repository comes from university software-engineering work and demonstrates the process of building a larger web application around multiple features and contributors. The README has been reorganised for portfolio review so employers can quickly identify the implemented technologies, architecture and engineering skills.
+This repository is based on a University of Roehampton software-engineering team project. The portfolio version keeps the implemented application and engineering work while presenting it in a cleaner format for technical and recruiter review.
+
+The final UI screenshots above were taken from the project's Sprint 4 documentation.
 
 ## Author / repository owner
 
