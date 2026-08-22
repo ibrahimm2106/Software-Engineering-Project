@@ -14,33 +14,36 @@ A full-stack **Node.js / Express** food-sharing platform designed to help commun
 
 ## Final application preview
 
-The screenshots below come from the project's **Sprint 4 final documentation** and show the user-facing application produced by the team.
+The screenshots come from the project's **Sprint 4 final documentation** and show the user-facing application produced by the team.
 
 ### Home
 
-<img src="https://raw.githubusercontent.com/ibrahimm2106/Software-Engineering-Project/Master/docs/screenshots/final-app/home.jpg" alt="Minimise Food Waste home page" width="900">
+<p align="center">
+  <img src="docs/screenshots/final-app/home.jpg" alt="Minimise Food Waste home page" width="480">
+</p>
 
 The landing page introduces the platform and gives users direct routes to **share food** and view **recommendations**. It also presents the project's advanced feature areas, including smart matching, rewards, messaging and location services.
 
-### Browse available food
-
-<img src="https://raw.githubusercontent.com/ibrahimm2106/Software-Engineering-Project/Master/docs/screenshots/final-app/browse-food.jpg" alt="Browse available food page" width="900">
-
-Users can explore available food listings in a card-based interface. Listings expose useful information such as category, quantity and dietary suitability so users can quickly judge whether an item is relevant to them.
-
-### Personalised recommendations
-
-<img src="https://raw.githubusercontent.com/ibrahimm2106/Software-Engineering-Project/Master/docs/screenshots/final-app/recommendations.jpg" alt="Personalised recommendations page" width="900">
-
-The recommendations interface presents suggested food matches and filters. The Sprint 4 design describes the recommendation concept using preference analysis and collaborative filtering to surface more relevant listings.
-
 ### Login and account access
 
-<img src="https://raw.githubusercontent.com/ibrahimm2106/Software-Engineering-Project/Master/docs/screenshots/final-app/login.jpg" alt="Login page" width="650">
+<p align="center">
+  <img src="docs/screenshots/final-app/login.jpg" alt="Login page" width="395">
+</p>
 
 The account flow provides email and password entry together with a **remember me** option for returning users.
 
-The wider final application also includes **smart matchmaking, food tagging/listing creation, user profiles, points/rewards and messaging**.
+### Other final application views
+
+The completed Sprint 4 application also includes:
+
+- **Browse available food** — card-based listings with category, quantity and dietary information.
+- **Personalised recommendations** — suggested food matches and filtering based on user preferences/activity.
+- **Smart matchmaking** — recommendation-oriented matching for donors and recipients.
+- **Tag / share food** — structured listing creation for surplus food.
+- **User profiles and rewards** — account information, sharing activity and points.
+- **Messaging** — user-to-user conversations to coordinate collection.
+
+A fuller product walkthrough is available in [`docs/FINAL_APP.md`](docs/FINAL_APP.md).
 
 ---
 
@@ -120,6 +123,7 @@ The application contains views for:
 ├── database-file/
 ├── docs/
 │   ├── ARCHITECTURE.md
+│   ├── FINAL_APP.md
 │   └── screenshots/
 │       └── final-app/
 │           ├── home.jpg
