@@ -1,65 +1,68 @@
 # Final Application Walkthrough
 
-This page shows the finished **Minimise Food Waste** application as presented in the Sprint 4 project documentation. The screenshots focus on the user-facing product rather than the presentation slides around them.
-
 [← Back to the main README](../README.md)
+
+This page gives a simple overview of the completed **Minimise Food Waste** application from the Sprint 4 project.
 
 ## User journey
 
-The main flow of the application is:
-
-**Sign in → discover available food → receive personalised recommendations → share food → interact with the community**
+**Sign in → browse available food → receive recommendations → share surplus food → message other users**
 
 ---
 
-## 1. Login
+## 1. Sign in
 
 <p align="center">
-  <img src="screenshots/final-app/login.jpg" alt="Login screen" width="395">
+  <a href="screenshots/final-app/login.jpg">
+    <img src="screenshots/final-app/login.jpg" alt="Minimise Food Waste login screen" width="430">
+  </a>
 </p>
 
-The login screen provides email and password fields, validation and a remember-me option before users enter the main application.
+Users can enter their email and password and choose **remember me** before accessing the platform.
 
 ---
 
 ## 2. Home page
 
 <p align="center">
-  <img src="screenshots/final-app/home.jpg" alt="Home page" width="480">
+  <a href="screenshots/final-app/home.jpg">
+    <img src="screenshots/final-app/home.jpg" alt="Minimise Food Waste home page" width="620">
+  </a>
 </p>
 
-The home page acts as the landing point for the platform. It directs users towards sharing surplus food and discovering recommendations, while presenting the food-waste reduction purpose of the application.
+The landing page explains the food-waste reduction goal and provides quick access to the platform's main features.
+
+> Click either screenshot to open the original image.
 
 ---
 
-## 3. Browse available food
+## 3. Discover and share food
 
-The browsing experience presents available food listings with information intended to help users decide whether an item is suitable, including item details, quantity/location information and dietary context.
+| Feature | What the user can do |
+| --- | --- |
+| **Browse food** | View available food listings and useful item information |
+| **Recommendations** | See suggested listings based on preferences and activity |
+| **Smart matchmaking** | Find more suitable donor/recipient matches |
+| **Share food** | Create a structured listing for surplus food |
+| **Location support** | Use location-aware behaviour as part of discovery and collection |
 
-The original Sprint 4 capture for this view is retained in [`screenshots/final-app/browse-food.jpg`](screenshots/final-app/browse-food.jpg), but it is not embedded here because the source capture contains a large blank area that disrupts the GitHub page layout.
-
----
-
-## 4. Personalised recommendations
-
-<p align="center">
-  <img src="screenshots/final-app/recommendations.jpg" alt="Personalised recommendations" width="480">
-</p>
-
-The recommendations view demonstrates the application's matchmaking concept: surfacing relevant food items based on user preferences and previous activity instead of requiring users to manually search every listing.
+The original Sprint 4 evidence images are retained in [`screenshots/final-app/`](screenshots/final-app/) for reference.
 
 ---
 
-## Other completed product views
+## 4. Community features
 
-The final Sprint 4 application also included:
+| Feature | Purpose |
+| --- | --- |
+| **Messaging** | Coordinate food collection with other users |
+| **User profile** | View account information and food-sharing activity |
+| **Points and rewards** | Track engagement and food-sharing impact |
+| **About page** | Explain the food-waste problem and platform purpose |
 
-- **Smart matchmaking** — recommendation-oriented matching based on user preferences/activity.
-- **Tag / share food** — a listing workflow for entering food name, category, quantity/quality, image and location information.
-- **User profile** — account information, items shared/received, ratings and the user's food-sharing impact.
-- **Messaging** — conversations between users to support coordination around food collection.
-- **About page** — explanation of the food-waste problem and the purpose of the platform.
+---
 
-## Product goal
+## Technical implementation
 
-The application was designed around a community-sharing model: people with surplus food can make it available to others, while recipients can discover relevant items nearby. The project combines this user experience with Node.js/Express application logic, Pug templates, recommendation/location/messaging services, database integration scaffolding and Docker-based development tooling.
+The product is supported by a **Node.js / Express** application with server-rendered **Pug** views and separate service modules for recommendations, messaging, location behaviour, user points and database access.
+
+For the engineering view of the project, return to the **[main README](../README.md)** or read the **[architecture notes](ARCHITECTURE.md)**.
