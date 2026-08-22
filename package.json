@@ -1,13 +1,13 @@
 {
   "name": "sd2-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "Community food-sharing web application for reducing food waste, built with Node.js, Express and Pug.",
   "main": "index.js",
   "scripts": {
-    "start": "supervisor -e  'js,pug,html' index.js",
+    "start": "supervisor -e 'js,pug,html' index.js",
     "test": "nightwatch --env chrome ./custom-tests"
   },
-  "author": "",
+  "author": "Mohamed Ibrahim and project team",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0",
